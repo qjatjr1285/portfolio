@@ -14,13 +14,11 @@ char* solution(const char* s) {
         answer[0] = s[len / 2 - 1];
         answer[1] = s[len / 2];
         answer[2] = '\0';
-
     }
     else {
         answer = (char*)malloc(sizeof(char)*3);
         answer[0] = s[len / 2];
         answer[1] = '\0';
-
     }
     return answer;
 }
