@@ -19,5 +19,4 @@ char* solution(int a, int b) {
     char* answer = (char*)malloc(3);
     answer = day_p[tmp];
     return answer;
-    
 }
