@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+long long solution(int a, int b) {
+    //두 정수 사이의 합
+    int i;
+    long long answer = 0;
+
+    if(a < b){
+        for (i = a; i <= b; i++ ) {
+            answer += i;
+        }
+    }
+    else {
+        for (i = b; i <= a; i++) {
+            answer += i;
+        }
+    }
+    return answer;
+}
