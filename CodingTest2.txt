@@ -20,5 +20,5 @@ char* solution(const char* s) {
         answer[0] = s[len / 2];
         answer[1] = '\0';
     }
-    return answer;
+    return answer; 
 }
