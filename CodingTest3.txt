@@ -17,5 +17,5 @@ long long solution(int a, int b) {
             answer += i;
         }
     }
-    return answer;
+    return answer; 
 }
