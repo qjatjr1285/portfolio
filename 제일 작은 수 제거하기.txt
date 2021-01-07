@@ -1,0 +1,54 @@
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+vector<int> solution(vector<int> arr) {
+
+    if (arr.size() == 1) {
+        arr[0] = -1;
+    }
+    else {
+        arr.erase(min_element(arr.begin(), arr.end()));
+    }
+
+    vector<int> answer;
+
+    return arr;
+}
+--------------------------------------------------------------
+#include <string>
+#include <vector>
+
+using namespace std;
+
+vector<int> solution(vector<int> arr) {
+
+    vector<int> answer;
+
+    int min = 99999999;
+    int minidx;
+
+    for (int i = 0; i < arr.size(); i++) {
+        if (min > arr[i]) {
+            min = arr[i];
+            minidx = i;
+        }
+    }
+
+    for (int i = 0; i < arr.size(); i++) {
+        if (i == minidx) {
+            continue;
+        }
+        answer.push_back(arr[i]);
+    }
+
+    if (answer.size() == 0) {
+        answer.push_back(-1);
+        return answer;
+    }
+    else {
+        return answer;
+    }
+}
