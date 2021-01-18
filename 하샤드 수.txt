@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+
+bool solution(int x) {
+    bool answer = true;
+    int sum = 0;
+    int X = x;
+    while (x) {
+        sum += x % 10;
+        x = x / 10;
+    }
+
+    if (X % sum == 0) {
+        answer = true;
+    }
+    else {
+        answer = false;
+    }
+
+    return answer;
+}
