@@ -19,3 +19,25 @@ long long solution(int a, int b) {
     }
     return answer; 
 }
+==============================================
+class Solution {
+    public long solution(int a, int b) {
+        long answer = 0;
+        long sum = 0;
+        
+        if (a < b) {
+        	for (long i = a; i <= b; i++) {
+        		sum += i;
+        	}
+        }else if(a == b) {
+        	sum += a;
+        }else {
+        	for (int i = b; i <= a; i++) {
+        		sum += i;
+        	}
+        }
+        
+        answer = sum;
+        return answer;
+    }
+}
