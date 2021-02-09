@@ -1,0 +1,38 @@
+class Solution {
+    public int[] solution(int N, int[] stages) {
+        int[] answer = new int[N];
+        double nfail[] = new double[N];   
+        double count = 0; //스테이지에 도달했으나 클리어하지 못한 플레이어 수
+        double pcount = stages.length; //스테이지에 도달한 플레이어 수
+        
+        for(int i=1; i <= N; i++){
+            for(int j=0; j < stages.length; j++){
+                if(stages[j] == i){ //스테이지에 도달은 했지만 클리어는 못한사람
+                    count += 1;
+                }
+            }
+            nfail[i-1] = count / pcount; //각 스테이지의 실패율
+            pcount -= count;
+            
+            if(count == 0) {
+                nfail[i-1] = 0;
+            }
+            
+            count = 0;
+        }
+        for(int k = 0; k < nfail.length; k++) {
+            double max = -1;
+            int index = 0;
+
+            for(int s = 0; s < nfail.length; s++) {
+                if(max < nfail[s]) {
+                    max = nfail[s];
+                    index = s;
+                }
+            }
+            nfail[index] = -1;
+            answer[k] = index + 1;
+        }
+        return answer;
+    }
+}
